@@ -7,7 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@include file="header.jsp" %>
+<input hidden="hidden" id="aa" value="${user.id}">
+
+
 <script>
+       var s= $("#aa").val();
+       alert(s);
     $('#mytab').bootstrapTable({
         url: '${pageContext.request.contextPath}/user/all?id=${user.id}',
         queryParams: "queryParams",
@@ -73,15 +78,16 @@
         return result;
     }
 </script>
+
 <div class="container">
-    <div class="row">
-        <div class="span12">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
             <ul class="nav nav-tabs">
                 <li class="active">
                     <a href="#">首页</a>
                 </li>
                 <li>
-                    <a href="#">资料</a>
+                    <a href="#">简介</a>
                 </li>
                 <li class="disabled">
                     <a href="#">信息</a>
@@ -106,15 +112,15 @@
                     </ul>
                 </li>
             </ul>
-            <div class="row">
-                <div class="span3">
+            <div class="row clearfix">
+                <div class="col-md-4 column">
                     <div class="btn-group">
-                        <button class="btn" type="button"><em class="icon-align-left"></em></button> <button class="btn" type="button"><em class="icon-align-center"></em></button> <button class="btn" type="button"><em class="icon-align-right"></em></button> <button class="btn" type="button"><em class="icon-align-justify"></em></button>
+                        <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-left"></em> 左</button> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-center"></em> 中</button> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-right"></em> 右</button> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-justify"></em> 全</button>
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                面板标题
+                                Panel title
                             </h3>
                         </div>
                         <div class="panel-body">
@@ -125,37 +131,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="span9">
-                    <div class="tabbable" id="tabs-728024">
+                <div class="col-md-8 column">
+                    <div class="tabbable" id="tabs-918998">
                         <ul class="nav nav-tabs">
                             <li class="active">
-                                <a href="#panel-36916" data-toggle="tab">第一部分</a>
+                                <a href="#panel-22503" data-toggle="tab">Section 1</a>
                             </li>
                             <li>
-                                <a href="#panel-790592" data-toggle="tab">第二部分</a>
+                                <a href="#panel-793067" data-toggle="tab">Section 2</a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="panel-36916">
-                                <p>
-                                    第一部分内容.
-                                </p>
+                            <div class="tab-pane active" id="panel-22503">
+                                <table class="table">
+                                    <table id="mytab" class="table table-hover"></table>
+                                </table>
                             </div>
-                            <div class="tab-pane" id="panel-790592">
+                            <div class="tab-pane" id="panel-793067">
                                 <p>
-                                    第二部分内容.
+                                    Howdy, I'm in Section 2.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <table class="table">
-                        <table id="mytab" class="table table-hover"></table>
-                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 </body>
 </html>

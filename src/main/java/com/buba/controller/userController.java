@@ -42,6 +42,7 @@ public class userController {
     @ResponseBody
     @RequestMapping("/all")
     public List<User> all( Integer id){
+            System.out.println("获取的ID："+id);
             Integer a=0;
             if (id!=0){
             a=id;
